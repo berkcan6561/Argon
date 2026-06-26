@@ -1,0 +1,51 @@
+// TurkCode - Sinif ve metod ornegi
+
+sinif HesapMakinesi {
+    degisken sonuc = 0;
+
+    fonksiyon baslat() {
+        this.sonuc = 0;
+    }
+
+    fonksiyon topla(deger) {
+        this.sonuc = this.sonuc + deger;
+    }
+
+    fonksiyon cikar(deger) {
+        this.sonuc = this.sonuc - deger;
+    }
+
+    fonksiyon carp(deger) {
+        this.sonuc = this.sonuc * deger;
+    }
+
+    fonksiyon bol(deger) {
+        this.sonuc = this.sonuc / deger;
+    }
+
+    fonksiyon sifirla() {
+        this.sonuc = 0;
+    }
+
+    fonksiyon sonucAl() {
+        dondur this.sonuc;
+    }
+}
+
+degisken hesap = yeni HesapMakinesi();
+
+yaz("Hesap Makinesi");
+yaz("================");
+
+hesap.topla(100);
+hesap.topla(50);
+yaz("100 + 50 = " + hesap.sonucAl());
+
+hesap.cikar(30);
+yaz("- 30 = " + hesap.sonucAl());
+
+hesap.carp(2);
+yaz("* 2 = " + hesap.sonucAl());
+
+hesap.bol(4);
+yaz("/ 4 = " + hesap.sonucAl());

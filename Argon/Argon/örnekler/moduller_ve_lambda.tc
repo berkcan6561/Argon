@@ -1,0 +1,14 @@
+// TurkCode - moduller ve lambda ornegi
+
+ithal "yardimci.tc" olarak yardimci;
+
+degisken fiyatlar = [120, 250, 90, 400];
+degisken kdvli = harita((x) => x * 1.2, fiyatlar);
+degisken buyukler = suz((x) => x >= 200, fiyatlar);
+degisken toplam = azalt((acc, x) => acc + x, fiyatlar, 0);
+
+yaz("Magaza: " + yardimci.magazaAdi);
+yaz("Toplam: " + toplam);
+yaz("KDV'li fiyatlar: " + kdvli);
+yaz("Buyuk fiyatlar: " + buyukler);
+yaz("Ilk urun indirimli: " + yardimci.indirimliFiyat(fiyatlar[0], 15));

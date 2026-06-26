@@ -1,0 +1,7 @@
+// moduller_ve_lambda.tc icin yardimci kutuphane
+
+fonksiyon indirimliFiyat(fiyat, oran = 10) {
+    dondur fiyat - (fiyat * oran / 100);
+}
+
+degisken magazaAdi = "TurkCode Store";

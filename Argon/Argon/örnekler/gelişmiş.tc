@@ -1,0 +1,197 @@
+// TürkCode - Gelişmiş Örnekler
+
+// ==================== FONKSİYONLAR ====================
+
+// Faktöriyel
+fonksiyon faktoriyel(n) {
+    eger (n <= 1) {
+        dondur 1;
+    }
+    dondur n * faktoriyel(n - 1);
+}
+
+yaz("5! = " + faktoriyel(5));
+
+// Fibonacci
+fonksiyon fib(n) {
+    eger (n <= 1) {
+        dondur n;
+    }
+    dondur fib(n - 1) + fib(n - 2);
+}
+
+yaz("Fibonacci(10) = " + fib(10));
+
+// Asal sayı kontrolü
+fonksiyon asalMi(sayi) {
+    eger (sayi < 2) {
+        dondur yanlis;
+    }
+    
+    dongu (degisken i = 2; i < sayi; i++) {
+        eger (sayi % i == 0) {
+            dondur yanlis;
+        }
+    }
+    dondur dogru;
+}
+
+yaz("17 asal mı? " + asalMi(17));
+yaz("18 asal mı? " + asalMi(18));
+
+// ==================== LİSTE İŞLEMLERİ ====================
+
+degisken sayilar = [5, 2, 8, 1, 9, 3, 7, 4, 6];
+
+yaz("Liste: " + sayilar);
+yaz("Uzunluk: " + uzunluk(sayilar));
+yaz("İlk: " + ilk(sayilar));
+yaz("Son: " + son(sayilar));
+yaz("Sıralı: " + sirala(sayilar));
+yaz("Ters: " + ters(sayilar));
+
+// ==================== METİN İŞLEMLERİ ====================
+
+degisken metin = "Merhaba TürkCode Dünyası";
+
+yaz("Metin: " + metin);
+yaz("Uzunluk: " + uzunluk(metin));
+yaz("Büyük harf: " + buyukHarf(metin));
+yaz("Küçük harf: " + kucukHarf(metin));
+yaz("Değiştir: " + degistir(metin, "Dünyası", "Programlama"));
+yaz("İçeriyor mu 'TürkCode': " + icerir(metin, "TürkCode"));
+yaz("Başlıyor mu 'Mer': " + basla(metin, "Mer"));
+yaz("Bitiyor mu 'sı': " + bitir(metin, "sı"));
+
+// ==================== KOŞULLU İFADELER ====================
+
+degisken puan = 85;
+
+eger (puan >= 90) {
+    yaz("Harika! AA");
+}
+degilse eger (puan >= 80) {
+    yaz("Çok iyi! AB");
+}
+degilse eger (puan >= 70) {
+    yaz("İyi! BB");
+}
+degilse eger (puan >= 60) {
+    yaz("Orta! CB");
+}
+degilse {
+    yaz("Geçer not: CC");
+}
+
+// ==================== SWITCH-CASE ====================
+
+degisken gun = 3;
+
+sec(gun) {
+    durum 1:
+        yaz("Pazartesi");
+        dur;
+    durum 2:
+        yaz("Salı");
+        dur;
+    durum 3:
+        yaz("Çarşamba");
+        dur;
+    durum 4:
+        yaz("Perşembe");
+        dur;
+    durum 5:
+        yaz("Cuma");
+        dur;
+    durum 6:
+        yaz("Cumartesi");
+        dur;
+    durum 7:
+        yaz("Pazar");
+        dur;
+    varsayilan:
+        yaz("Geçersiz gün");
+}
+
+// ==================== DÖNGÜLER ====================
+
+// For döngüsü
+yaz("\n--- For Döngüsü ---");
+dongu (degisken i = 1; i <= 5; i++) {
+    yaz("Sayı: " + i);
+}
+
+// While döngüsü
+yaz("\n--- While Döngüsü ---");
+degisken sayac = 0;
+while (sayac < 3) {
+    yaz("Sayac: " + sayac);
+    sayac = sayac + 1;
+}
+
+// ==================== NESNE ====================
+
+degisken kisi = {
+    ad: "Ahmet",
+    yas: 25,
+    sehir: "İstanbul"
+};
+
+yaz("\n--- Nesne ---");
+yaz("Ad: " + kisi.ad);
+yaz("Yaş: " + kisi.yas);
+yaz("Şehir: " + kisi.sehir);
+
+// ==================== MATEMATİK FONKSİYONLARI ====================
+
+yaz("\n--- Matematik ---");
+yaz("Yuvarla(4.5): " + yuvarla(4.5));
+yaz("YuvarlaAsagi(4.9): " + yuvarlaAsagi(4.9));
+yaz("YuvarlaYukari(4.1): " + yuvarlaYukari(4.1));
+yaz("Mutlak(-15): " + mutlak(-15));
+yaz("Karekök(16): " + karekök(16));
+yaz("Üs(2, 8): " +üs(2, 8));
+yaz("RastgeleTam(1, 100): " + rastgeleTam(1, 100));
+
+// ==================== TARİH FONKSİYONLARI ====================
+
+yaz("\n--- Tarih ---");
+yaz("Şimdi: " + simdi());
+yaz("Tarih: " + tarih());
+yaz("Saat: " + saat());
+yaz("Zaman: " + zaman());
+
+// ==================== TİP KONTROLÜ ====================
+
+yaz("\n--- Tip Kontrolü ---");
+yaz("tip(42): " + tip(42));
+yaz("tip(3.14): " + tip(3.14));
+yaz("tip('metin'): " + tip("metin"));
+yaz("tip(dogru): " + tip(dogru));
+yaz("tip(bos): " + tip(bos));
+yaz("tip([1,2]): " + tip([1,2]));
+yaz("tip({a:1}): " + tip({a:1}));
+
+yaz("\nmiSayi(42): " + miSayi(42));
+yaz("miMetin('test'): " + miMetin("test"));
+yaz("miListe([1,2]): " + miListe([1,2]));
+yaz("miNesne({a:1}): " + miNesne({a:1}));
+
+// ==================== TERNARY OPERATÖR ====================
+
+degisken yas = 20;
+degisken sonuc = (yas >= 18) ? "Yetişkin" : "Çocuk";
+yaz("\n--- Ternary ---");
+yaz("Sonuç: " + sonuc);
+
+// ==================== HATA YÖNETİMİ ====================
+
+yaz("\n--- Hata Yönetimi ---");
+dene {
+    degisken x = 10 / 0;
+}
+yakala (hata) {
+    yaz("Yakalanan hata: " + hata);
+}
+
+yaz("Program bitti!");

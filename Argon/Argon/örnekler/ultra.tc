@@ -1,0 +1,74 @@
+// TurkCode - Ultra ornek
+
+yaz("=== TURKCODE ULTRA ORNEK ===");
+yaz("");
+
+// Veri temizleme ve ozetleme
+degisken satirlar = [
+    "Ali,90",
+    "Zeynep,75",
+    "Mehmet,88",
+    "Elif,95"
+];
+
+fonksiyon parcalaSatir(satir) {
+    degisken alanlar = parcala(satir, ",");
+    dondur {
+        ad: alanlar[0],
+        puan: tam(alanlar[1])
+    };
+}
+
+degisken kayitlar = [];
+her (degisken satir in satirlar) {
+    kayitlar = ekle(kayitlar, parcalaSatir(satir));
+}
+
+degisken toplam = 0;
+degisken enIyi = kayitlar[0];
+
+her (degisken kayit in kayitlar) {
+    toplam += kayit.puan;
+    eger (kayit.puan > enIyi.puan) {
+        enIyi = kayit;
+    }
+}
+
+degisken ortalama = toplam / uzunluk(kayitlar);
+yaz("Ortalama: " + ortalama);
+yaz("En iyi ogrenci: " + enIyi.ad + " / " + enIyi.puan);
+yaz("");
+
+// Do-while ve while
+degisken sayac = 0;
+yap {
+    sayac++;
+} while (sayac < 2);
+
+while (sayac < 4) {
+    sayac++;
+}
+
+yaz("Sayac son deger: " + sayac);
+yaz("");
+
+// Regex ve JSON birlikte kullanimi
+degisken kimlik = regex().esles("[A-Z][a-z]+", "Berk");
+degisken rapor = {
+    ogrenciSayisi: uzunluk(kayitlar),
+    ortalama: ortalama,
+    enIyi: enIyi.ad,
+    regexBuldu: kimlik.tamamı
+};
+
+yaz("JSON rapor: " + json().donustur(rapor));
+yaz("");
+
+// Ternary ve tip kontrolu
+degisken sonucDurumu = ortalama >= 85 ? "basarili" : "gelisiyor";
+yaz("Durum: " + sonucDurumu);
+yaz("Kayitlar tip: " + tip(kayitlar));
+yaz("Rapor nesne mi: " + miNesne(rapor));
+
+yaz("");
+yaz("=== ORNEK BITTI ===");

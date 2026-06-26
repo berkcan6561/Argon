@@ -1,0 +1,106 @@
+// TürkCode Complete v5.0 - Full Compiler Pipeline Test
+
+yaz("=== TÜRKCODE COMPLETE v5.0 ===");
+yaz("");
+
+// ==================== TEMEL İŞLEMLER ====================
+
+yaz("--- TEMEL İŞLEMLER ---");
+
+değişken a = 10;
+değişken b = 3;
+
+yaz("a = " + a);
+yaz("b = " + b);
+yaz("a + b = " + (a + b));
+yaz("a - b = " + (a - b));
+yaz("a * b = " + (a * b));
+yaz("a / b = " + (a / b));
+yaz("a % b = " + (a % b));
+yaz("a ^ b = " + (a ^ b));
+
+yaz("");
+yaz("--- KARŞILAŞTIRMA ---");
+
+yaz("a == b: " + (a == b));
+yaz("a != b: " + (a != b));
+yaz("a > b: " + (a > b));
+yaz("a < b: " + (a < b));
+yaz("a >= b: " + (a >= b));
+yaz("a <= b: " + (a <= b));
+
+yaz("");
+yaz("--- MANTIK ---");
+
+değişken x = doğru;
+değişken y = yanlış;
+
+yaz("x = doğru, y = yanlış");
+yaz("x ve y: " + (x ve y));
+yaz("x veya y: " + (x veya y));
+yaz("değil x: " + (değil x));
+yaz("değil y: " + (değil y));
+
+yaz("");
+yaz("--- LİSTE ---");
+
+değişken liste = [1, 2, 3, 4, 5];
+yaz("Liste: " + liste);
+yaz("Uzunluk: " + uzunluk(liste));
+yaz("İlk: " + ilk(liste));
+yaz("Son: " + son(liste));
+yaz("Sırala: " + sırala(liste));
+yaz("Ters: " + ters(liste));
+
+yaz("");
+yaz("--- NESNE ---");
+
+değişken kişi = {ad: "Ahmet", yas: 25, şehir: "İstanbul"};
+yaz("Kişi: " + kişi);
+yaz("Ad: " + kişi.ad);
+yaz("Yaş: " + kişi.yas);
+
+yaz("");
+yaz("--- FONKSİYONLAR ---");
+
+fonksiyon faktoriyel(n) {
+    eğer (n <= 1) {
+        dön 1;
+    }
+    dön n * faktoriyel(n - 1);
+}
+
+fonksiyon topla(a, b = 0) {
+    dön a + b;
+}
+
+yaz("5! = " + faktoriyel(5));
+yaz("Topla(2, 3) = " + topla(2, 3));
+yaz("Topla(5) = " + topla(5));
+
+yaz("");
+yaz("--- KOŞULLU ---");
+
+değişken puan = 85;
+
+eğer (puan >= 90) {
+    yaz("Harika!");
+}
+degilse eğer (puan >= 80) {
+    yaz("Çok iyi!");
+}
+degilse {
+    yaz("İyi!");
+}
+
+yaz("");
+yaz("--- DÖNGÜ ---");
+
+değişken toplam = 0;
+döngü (değişken i = 1; i <= 5; i++) {
+    toplam = toplam + i;
+}
+yaz("1'den 5'e toplam: " + toplam);
+
+yaz("");
+yaz("=== PROGRAM BİTTİ ===");

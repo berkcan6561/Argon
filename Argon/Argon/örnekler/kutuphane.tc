@@ -1,0 +1,12 @@
+// Python kutuphanelerini TurkCode icinden kullanma
+
+ithal "math" olarak matematik;
+yaz("Karekok: " + matematik.karekök(81));
+yaz("Faktoriyel: " + matematik.faktoriyel(5));
+
+degisken rastgele = kütüphane("rastgele");
+degisken istatistik = kutuphane("statistics");
+
+yaz("Secim: " + rastgele.seç([10]));
+yaz("Ortalama: " + istatistik.ortalama([2, 4, 6]));
+yaz("Metin: " + "MERHABA".küçükHarf());

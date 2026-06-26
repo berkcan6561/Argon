@@ -1,0 +1,89 @@
+// TurkCode - Profesyonel ozellik gostergesi
+
+yaz("=== TURKCODE PROFESYONEL ORNEK ===");
+yaz("");
+
+// Temel veri yapilari
+degisken urunler = [
+    {ad: "Klavye", fiyat: 650},
+    {ad: "Mouse", fiyat: 350},
+    {ad: "Monitor", fiyat: 4200}
+];
+
+degisken toplam = 0;
+her (degisken urun in urunler) {
+    toplam += urun.fiyat;
+}
+
+yaz("Toplam urun tutari: " + toplam);
+yaz("");
+
+// Fonksiyonlar
+fonksiyon indirimliFiyat(fiyat, oran = 10) {
+    dondur fiyat - (fiyat * oran / 100);
+}
+
+yaz("Monitor indirimli: " + indirimliFiyat(4200, 15));
+yaz("Mouse indirimli: " + indirimliFiyat(350));
+yaz("");
+
+// Kosullar ve switch
+degisken seviye = toplam > 4000 ? "yuksek" : "normal";
+yaz("Sepet seviyesi: " + seviye);
+
+sec(toplam > 5000 ? 2 : 1) {
+    durum 1:
+        yaz("Standart teslimat");
+        dur;
+    durum 2:
+        yaz("Ucretsiz teslimat");
+        dur;
+    varsayilan:
+        yaz("Bilinmeyen teslimat");
+}
+
+yaz("");
+
+// Siniflar
+sinif Musteri {
+    degisken ad = "Misafir";
+    degisken puan = 0;
+
+    fonksiyon baslat(ad) {
+        this.ad = ad;
+        this.puan = 0;
+    }
+
+    fonksiyon puanEkle(miktar) {
+        this.puan += miktar;
+    }
+
+    fonksiyon ozet() {
+        dondur this.ad + " / puan: " + this.puan;
+    }
+}
+
+degisken musteri = yeni Musteri("Ayse");
+musteri.puanEkle(25);
+musteri.puanEkle(15);
+yaz("Musteri: " + musteri.ozet());
+yaz("");
+
+// Moduller
+degisken veri = json().coz('{"magaza":"TurkCode Store","aktif":true}');
+yaz("Magaza: " + veri.magaza);
+yaz("Regex kontrolu: " + regex().esles("[A-Z][a-z]+", "Ankara"));
+yaz("Bugun: " + tarihModul().bugun());
+yaz("");
+
+// Hata yonetimi
+dene {
+    degisken sonuc = 10 / 0;
+    yaz(sonuc);
+}
+yakala (hata) {
+    yaz("Beklenen hata yakalandi");
+}
+
+yaz("");
+yaz("=== ORNEK BITTI ===");

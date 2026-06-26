@@ -1,0 +1,8 @@
+// TürkCode - Merhaba Dünya
+yaz("Merhaba TürkCode!");
+
+degisken x = 10;
+degisken ad = "TürkCode";
+
+yaz("Değer: " + x);
+yaz("Ad: " + ad);
